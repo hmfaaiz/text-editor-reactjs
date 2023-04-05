@@ -78,7 +78,7 @@ export default function Textarea(props) {
         <div className="my-3">
     
 
-          <textarea style={{...stylesbg, height: "200px"}} className="form-control" placeholder="Leave a comment here" id="floatingTextarea" onChange={updateText} value={text} ></textarea>
+          <textarea style={{...stylesbg, height: "200px"}} className="form-control" id="floatingTextarea" onChange={updateText} value={text} ></textarea>
       
 
           <button type="button" className="btn btn-primary my-3 mx-3" onClick={upperCase}>Upper Case</button>
