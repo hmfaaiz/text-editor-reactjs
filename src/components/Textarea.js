@@ -95,7 +95,7 @@ export default function Textarea(props) {
       <div className='container my-4'>
         <h1 style={stylestxt}>Summary of Text</h1>
         <h5 className='my-2' style={stylestxt}>Total Number of Characters : <span>{text.length}</span></h5>
-        <h5 className='my-2' style={stylestxt}>Total Number of Words : <span>{(text.split(' ').length) - 1}</span></h5>
+        <h5 className='my-2' style={stylestxt}>Total Number of Words : <span>{text.split(' ').filter((element)=>{return element.length!==0}).length}</span></h5>
         <h5 className='my-2' style={stylestxt}>Total Time To read words : <span>{0.008 * (text.split(' ').length) - 0.008} Min.</span></h5>
         <h5 className='my-2' style={stylestxt}>Search : {results}</h5>
         
