@@ -9,7 +9,7 @@ export default function Textarea(props) {
   
   function updateText(event) {
     setText(event.target.value)
-    //props.updateAlert("We don't save your personal text & it is secured","danger")
+   
 
   };
 
@@ -81,24 +81,23 @@ export default function Textarea(props) {
           <textarea style={{...stylesbg, height: "200px"}} className="form-control" id="floatingTextarea" onChange={updateText} value={text} ></textarea>
       
 
-          <button type="button" className="btn btn-primary my-3 mx-3" onClick={upperCase}>Upper Case</button>
-          <button type="button" className="btn btn-primary my-3 mx-3" onClick={lowerCase}>Lower Case</button>
-          <button type="button" className="btn btn-primary my-3 mx-3" onClick={clearText}>Clear</button>
-          <button type="button" className="btn btn-primary my-3 mx-3" onClick={copyText}>Copy Text</button>
+          <button  disabled={text.length===0} type="button" className="btn btn-primary my-3 mx-3" onClick={upperCase}>Upper Case</button>
+          <button disabled={text.length===0}  type="button" className="btn btn-primary my-3 mx-3" onClick={lowerCase}>Lower Case</button>
+          <button disabled={text.length===0}  type="button" className="btn btn-primary my-3 mx-3" onClick={clearText}>Clear</button>
+          <button  disabled={text.length===0} type="button" className="btn btn-primary my-3 mx-3" onClick={copyText}>Copy Text</button>
 
         </div>
 
-        <input style={{ ...stylesbg,...stylestxt}} id="search-input" className="form-control" type="search" placeholder="Search word here" onChange={searchWord} />
+        <input disabled={text.length===0} style={{ ...stylesbg,...stylestxt}} id="search-input" className="form-control" type="search" placeholder="Search word here" onChange={searchWord} />
 
       </div>
 
       <div className='container my-4'>
         <h1 style={stylestxt}>Summary of Text</h1>
         <h5 className='my-2' style={stylestxt}>Total Number of Characters : <span>{text.length}</span></h5>
-        <h5 className='my-2' style={stylestxt}>Total Number of Words : <span>{text.split(' ').filter((element)=>{return element.length!==0}).length}</span></h5>
-        <h5 className='my-2' style={stylestxt}>Total Time To read words : <span>{0.008 * (text.split(' ').length) - 0.008} Min.</span></h5>
+        <h5 className='my-2' style={stylestxt}>Total Number of Words : <span>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</span></h5>
+        <h5 className='my-2' style={stylestxt}>Total Time To read words : <span>{0.008 * (text.split((/\s+/)).filter((element)=>{return element.length!==0}).length)} Min.</span></h5>
         <h5 className='my-2' style={stylestxt}>Search : {results}</h5>
-        
       </div>
       <div className='container my-4'>
       <h2  className='my-3' style={stylestxt}> Preview</h2>
