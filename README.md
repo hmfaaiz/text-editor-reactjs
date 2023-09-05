@@ -1,5 +1,7 @@
 # Getting Started with Create React App
-![Uploading Updated.PNG…]()
+
+![Updated](https://github.com/hmfaaiz/text-editor-reactjs/assets/126394589/aea02e07-7c62-4b28-9e97-a7fa7fedc2d9)
+
 
 
 
